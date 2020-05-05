@@ -23,12 +23,12 @@ class Scraper
 
     links = student.css("div.social-icon-container").css("a")
     socials = [].uniq
-  
+
     links.flat_map do |i|
       socials << i.get_attribute("href")
     end
     socials.each do |value|
-      case value if1 
+      case value if1
       when /twitter/
         @twitter = value
       when /linkedin/
