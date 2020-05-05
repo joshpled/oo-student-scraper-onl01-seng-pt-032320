@@ -24,9 +24,7 @@ class Scraper
     links = student.css("div.social-icon-container").css("a")
     socials = [].uniq
     links.flat_map do |i|
-      if i.get_attribute("href").match?(/twitter/ || /linkedin/ || /github/)
       socials << i.get_attribute("href")
-    end
     end
     socials.each do |value|
       case value
