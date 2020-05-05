@@ -22,8 +22,6 @@ class Scraper
     student = Nokogiri::HTML(open(profile_url))
 
     links = student.css("div.social-icon-container").css("a")
-    binding.pry
-
     links.flat_map do |links|
       value = links.attribute("href").value
       case value
