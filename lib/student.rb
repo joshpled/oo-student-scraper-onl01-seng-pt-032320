@@ -14,7 +14,7 @@ class Student
   def self.create_from_collection(students_array)
     students = students_array.to_s
     Scraper.scrape_index_page(students)
-    pry 
+    binding.pry
   end
 
   def add_student_attributes(attributes_hash)
