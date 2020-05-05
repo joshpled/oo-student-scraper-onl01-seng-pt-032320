@@ -34,7 +34,7 @@ class Scraper
       else
         @blog = @value
       end
-    binding.pry
+    # binding.pry
     end
 
     @profile_quote = student.css("div.profile-quote").text
