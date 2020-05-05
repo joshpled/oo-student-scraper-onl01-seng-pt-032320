@@ -20,18 +20,18 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     student = Nokogiri::HTML(open(profile_url))
-
+    student_hash = {}
     links = student.css("div.social-icon-container").css("a")
     links.flat_map do |link|
       value = link.attribute("href").value
       if value.match?(/twitter/)
-        @twitter = value
+        student_hash[:twitter] = value
       elsif value.match?(/linkedin/)
-        @linkedin = value
+        student_hash[:linkedin] = value
       elsif value.match?(/github/)
-        @github = value
+        student_hash[:github] = value
       else
-        @blog = value
+        student_hash[:blog] = value
       end
     end
     # binding.pry
