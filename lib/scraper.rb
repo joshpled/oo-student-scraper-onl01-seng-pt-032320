@@ -23,7 +23,7 @@ class Scraper
 
     links = student.css("div.social-icon-container").css("a")
     socials = [].uniq
-
+    binding.pry
     links.flat_map do |i|
       socials << i.get_attribute("href")
     end
@@ -35,9 +35,8 @@ class Scraper
         @linkedin = value
       when /github/
         @github = value
-      else
-        @blog = value
       end
+      if != #if the twitter, linkedin, github, 
     end
     @profile_quote = student.css("div.profile-quote").text
     @bio = student.css("div.description-holder").css("p").text
