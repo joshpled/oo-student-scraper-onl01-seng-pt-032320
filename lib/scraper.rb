@@ -23,12 +23,12 @@ class Scraper
 
     links = student.css("div.social-icon-container").css("a")
     socials = [].uniq
-
+  
     links.flat_map do |i|
       socials << i.get_attribute("href")
     end
     socials.each do |value|
-      case value if1
+      case value if1 
       when /twitter/
         @twitter = value
       when /linkedin/
@@ -39,8 +39,8 @@ class Scraper
     end
     @profile_quote = student.css("div.profile-quote").text
     @bio = student.css("div.description-holder").css("p").text
-    person = {:twitter => @twitter, :linkedin => @linkedin, :github => @github, :blog => @blog, :profile_quote => @profile_quote, :bio => @bio}
-  binding.pry
+ {:twitter => @twitter, :linkedin => @linkedin, :github => @github, :blog => @blog, :profile_quote => @profile_quote, :bio => @bio}
+
   end
 
 end
