@@ -22,8 +22,9 @@ class Scraper
     student = Nokogiri::HTML(open(profile_url))
 
     links = student.css("div.social-icon-container").css("a")
+    binding.pry
     links.flat_map do |i|
-        value = links[i].attribute("href").value
+      value = links[i].attribute("href").value
       case value
       when /twitter/
         @twitter = value
