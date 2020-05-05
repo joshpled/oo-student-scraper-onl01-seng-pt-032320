@@ -26,7 +26,7 @@ class Scraper
     links.flat_map do |i|
       if i.get_attribute("href").match?(/twitter/ || /linkedin/)
       socials << i.get_attribute("href")
-    end 
+    end
     end
     socials.each do |value|
       case value
