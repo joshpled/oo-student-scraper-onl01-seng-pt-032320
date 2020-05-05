@@ -31,7 +31,7 @@ class Scraper
         @linkedin = value
       when /github/
         @github = value
-      else 
+      else
         @blog = value
       end 
     end
