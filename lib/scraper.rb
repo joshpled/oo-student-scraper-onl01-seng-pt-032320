@@ -4,7 +4,7 @@ require 'pry'
 
 class Scraper
 
-  attr_accessor :name, :location, :profile_url, :twitter, :linkedin, :github, :blog, :profile_quote, :bio
+  attr_accessor :name, :location, :profile_url, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :value
 
   def self.scrape_index_page(index_url)
     students = Nokogiri::HTML(open(index_url))
