@@ -22,7 +22,7 @@ class Scraper
     student = Nokogiri::HTML(open(profile_url))
 
     links = student.css("div.social-icon-container").css("a")
-    
+
     socials = [].uniq
     binding.pry
     links.flat_map do |i|
