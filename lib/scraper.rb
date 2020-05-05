@@ -24,11 +24,11 @@ class Scraper
     links = student.css("div.social-icon-container").css("a")
     links.flat_map do |links|
       value = links.attribute("href").value
-      if value.include? /twitter/
+      if value.include?(/twitter/)
         @twitter = value
-      elsif value.include? /linkedin/
+      elsif value.include?(/linkedin/)
         @linkedin = value
-      elsif value.include? /github/
+      elsif value.include?(/github/)
         @github = value
       else
         @blog = value
