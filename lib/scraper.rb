@@ -38,7 +38,7 @@ class Scraper
     student_hash[:profile_quote] = student.css("div.profile-quote").text
     student_hash[:bio] = student.css("div.description-holder").css("p").text
     # { :twitter => @twitter, :linkedin => @linkedin, :github => @github, :blog => @blog, :profile_quote => @profile_quote, :bio => @bio }
-
+student_hash
   end
 
 end
