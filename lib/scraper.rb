@@ -23,6 +23,7 @@ class Scraper
 
     links = student.css("div.social-icon-container").css("a")
     binding.pry
+    i=0
     links.flat_map do |i|
       value = links[i].attribute("href").value
       case value
