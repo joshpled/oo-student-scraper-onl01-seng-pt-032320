@@ -23,7 +23,7 @@ class Scraper
 
     links = student.css("div.social-icon-container").css("a")
     socials = [].uniq
-    pry
+    binding.pry
     links.flat_map do |i|
       socials << i.get_attribute("href")
     end
