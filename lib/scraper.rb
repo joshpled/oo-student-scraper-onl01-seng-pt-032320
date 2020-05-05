@@ -38,7 +38,8 @@ class Scraper
     end
     @profile_quote = student.css("div.profile-quote").text
     @bio = student.css("div.description-holder").css("p").text
-    {:twitter => @twitter, :linkedin => @linkedin, :github => @github, :blog => @blog, :profile_quote => @profile_quote, :bio => @bio}
+    person = {:twitter => @twitter, :linkedin => @linkedin, :github => @github, :blog => @blog, :profile_quote => @profile_quote, :bio => @bio}
+    binding.pry
   end
 
 end
