@@ -22,8 +22,8 @@ class Scraper
     student = Nokogiri::HTML(open(profile_url))
 
     links = student.css("div.social-icon-container").css("a")
-    links.flat_map do |links|
-      value = links.attribute("href").value
+    links.flat_map do |link|
+      value = link.attribute("href").value
       if value.match?(/twitter/)
         @twitter = value
       elsif value.match?(/linkedin/)
@@ -31,7 +31,6 @@ class Scraper
       elsif value.match?(/github/)
         @github = value
       end
-
     end
     binding.pry 
     @profile_quote = student.css("div.profile-quote").text
