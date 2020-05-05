@@ -36,7 +36,7 @@ class Scraper
       when /github/
         @github = value
       end
-      if != #if the twitter, linkedin, github,
+      # if != #if the twitter, linkedin, github,
     end
     @profile_quote = student.css("div.profile-quote").text
     @bio = student.css("div.description-holder").css("p").text
