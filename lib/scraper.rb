@@ -23,7 +23,7 @@ class Scraper
 
     links = student.css("div.social-icon-container").css("a")
     socials = [].uniq
-    binding.pry
+    
     links.flat_map do |i|
       socials << i.get_attribute("href")
     end
@@ -43,5 +43,5 @@ class Scraper
     @bio = student.css("div.description-holder").css("p").text
     {:twitter => @twitter, :linkedin => @linkedin, :github => @github, :blog => @blog, :profile_quote => @profile_quote, :bio => @bio}
   end
-
+binding.pry
 end
