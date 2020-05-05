@@ -35,9 +35,6 @@ class Scraper
         @linkedin = value
       when /github/
         @github = value
-      else
-        @blog = value
-      end
     end
     @profile_quote = student.css("div.profile-quote").text
     @bio = student.css("div.description-holder").css("p").text
