@@ -31,7 +31,7 @@ class Scraper
       elsif value.match?(/github/)
         @github = value
       end
-    
+
     end
     binding.pry 
     @profile_quote = student.css("div.profile-quote").text
