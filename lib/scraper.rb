@@ -4,7 +4,7 @@ require 'pry'
 
 class Scraper
 
-  attr_accessor :name, :location, :profile_url, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :value
+  attr_accessor :name, :location, :profile_url, :twitter, :linkedin, :github, :blog, :profile_quote, :bio
 
   def self.scrape_index_page(index_url)
     students = Nokogiri::HTML(open(index_url))
@@ -23,16 +23,16 @@ class Scraper
 
     links = student.css("div.social-icon-container").css("a")
     links.flat_map do |links|
-      @value = links.attribute("href").value
-      case @value
+      value = links.attribute("href").value
+      case value
       when /twitter/
-        @twitter = @value
+        @twitter = value
       when /linkedin/
-        @linkedin = @value
+        @linkedin = value
       when /github/
-        @github = @value
+        @github = value
       else
-        @blog = @value
+        @blog = value
       end
     # binding.pry
     end
