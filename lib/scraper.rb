@@ -20,7 +20,7 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     student = Nokogiri::HTML(open(profile_url))
-    
+
     links = student.css("div.social-icon-container").css("a")
     socials = [].uniq
     links.flat_map do |i|
